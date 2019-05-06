@@ -6,15 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
+    <ImageView
+        android:id="@+id/imgViewCamera"
+        android:layout_width="264dp"
+        android:layout_height="232dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/img_view_camera_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/camera" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvStatusMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imgViewCamera"
+        app:layout_constraintVertical_bias="0.247" />
 
     <Button
         android:id="@+id/buttonCamera"
@@ -24,10 +40,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Take Picture"
+        android:text="@string/btn_take_picture"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tvStatusMessage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

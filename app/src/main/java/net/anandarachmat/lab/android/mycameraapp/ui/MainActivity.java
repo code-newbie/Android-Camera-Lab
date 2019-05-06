@@ -110,19 +110,26 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Button pressed !!", Toast.LENGTH_LONG).show();
 
 
-                Intent intent = new Intent(getApplication(), CameraActivity.class);
-                intent.putExtra("requestCode", REQUEST_CODE_HIGH_QUALITY_IMAGE);
-                /*
-                if (null != customerRaw) {
-                    intent.putExtra(Onboard.DATA_NEW_CUSTOMER, customerRaw);
-                    intent.putExtra(Onboard.DATA_NEW_CUSTOMER_ADDRESS, addressRaw);
-                }
-                */
-                startActivity(intent);
+                // startUsingCamera1SDK();
+                startUsingCamera2SDK();
 
             } else {
                 Toast.makeText(getApplicationContext(), "Camera / WIFI / GSM Location permission is not allowed", Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+
+    private void startUsingCamera1SDK() {
+        Intent intent = new Intent(getApplication(), net.anandarachmat.lab.android.mycameraapp.ui.CameraActivity.class);
+        intent.putExtra("requestCode", REQUEST_CODE_HIGH_QUALITY_IMAGE);
+        startActivity(intent);
+    }
+
+
+    private void startUsingCamera2SDK() {
+        Intent intent = new Intent(getApplication(), net.anandarachmat.lab.android.mycameraapp.camera2.ui.CameraActivity.class);
+        intent.putExtra("requestCode", REQUEST_CODE_HIGH_QUALITY_IMAGE);
+        startActivity(intent);
     }
 }

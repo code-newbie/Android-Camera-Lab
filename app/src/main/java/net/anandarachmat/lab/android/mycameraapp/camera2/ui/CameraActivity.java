@@ -17,18 +17,34 @@
 package net.anandarachmat.lab.android.mycameraapp.camera2.ui;
 
 import android.os.Bundle;
+import android.widget.FrameLayout;
 
 import net.anandarachmat.lab.android.mycameraapp.R;
+import net.anandarachmat.lab.android.mycameraapp.util.Box;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class CameraActivity extends AppCompatActivity {
 
+    private Box box;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
+
+        // FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
+
+        box = new Box(getApplicationContext());
+
+        // FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(1024, 768);
+        // lp.setMargins(50,50,50,50);
+        // addContentView(box, lp);
+
+        addContentView(box, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.FILL_PARENT, FrameLayout.LayoutParams.FILL_PARENT));
+
         if (null == savedInstanceState) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, Camera2BasicFragment.newInstance())

@@ -13,10 +13,36 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    android:id="@+id/parentContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#000"
-    tools:context="net.anandarachmat.lab.android.mycameraapp.camera2.ui.CameraActivity" />
+    tools:context="net.anandarachmat.lab.android.mycameraapp.camera2.ui.CameraActivity" >
+
+    <TextView
+        android:id="@+id/tv_title_ktp_capture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        tools:text="Foto e- KTP" />
+
+    <TextView
+        android:id="@+id/tv_title_ktp_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        tools:text="Letakkan Kartu KTP di dalam kotak yang sudah disediakan. Pastikan NIK Anda terbaca dengan jelas." />
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </FrameLayout>
+
+</LinearLayout>

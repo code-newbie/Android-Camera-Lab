@@ -14,6 +14,7 @@
  limitations under the License.
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -27,17 +28,25 @@
     <FrameLayout
         android:id="@+id/control"
         android:layout_width="match_parent"
-        android:layout_height="112dp"
+        android:layout_height="150dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:background="@color/control_background">
+        android:background="#454443">
 
-        <Button
+        <!-- Button
             android:id="@+id/picture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/picture" />
+            android:text="@string/picture" / !-->
+
+        <ImageButton
+            android:id="@+id/img_btn_take_pic"
+            android:layout_width="141dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/press"
+            android:contentDescription="TODO" />
 
         <ImageButton
             android:id="@+id/info"
@@ -50,5 +59,4 @@
             android:src="@drawable/ic_action_info" />
 
     </FrameLayout>
-
 </RelativeLayout>

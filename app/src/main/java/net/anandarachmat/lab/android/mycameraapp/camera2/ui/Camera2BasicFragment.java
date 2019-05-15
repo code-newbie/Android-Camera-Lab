@@ -52,9 +52,11 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import net.anandarachmat.lab.android.mycameraapp.R;
+import net.anandarachmat.lab.android.mycameraapp.util.Box;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -76,6 +78,9 @@ import androidx.fragment.app.Fragment;
 
 public class Camera2BasicFragment extends Fragment
         implements View.OnClickListener, ActivityCompat.OnRequestPermissionsResultCallback {
+
+    // private Box box;
+
 
     /**
      * Conversion from screen rotation to JPEG orientation.
@@ -424,12 +429,19 @@ public class Camera2BasicFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_camera2_basic, container, false);
+
+        // box = new Box(getContext());
+        // container.addView(box, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.FILL_PARENT, FrameLayout.LayoutParams.FILL_PARENT));
+
+        View fragmentView = inflater.inflate(R.layout.fragment_camera2_basic, container, false);
+        //fragmentView.set addView(box, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.FILL_PARENT, FrameLayout.LayoutParams.FILL_PARENT));
+
+        return fragmentView;
     }
 
     @Override
     public void onViewCreated(final View view, Bundle savedInstanceState) {
-        view.findViewById(R.id.picture).setOnClickListener(this);
+        view.findViewById(R.id.img_btn_take_pic).setOnClickListener(this);
         view.findViewById(R.id.info).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
     }
@@ -890,7 +902,7 @@ public class Camera2BasicFragment extends Fragment
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.picture: {
+            case R.id.img_btn_take_pic: {
                 takePicture();
                 break;
             }

@@ -21,7 +21,7 @@ public class Box extends View {
         super.onDraw(canvas);
 
         paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(Color.GREEN);
+        paint.setColor(Color.WHITE);
         paint.setStrokeWidth(10);
 
         //center
@@ -29,7 +29,10 @@ public class Box extends View {
         int y0 = canvas.getHeight()/2;
         int dx = canvas.getHeight()/3;
         int dy = canvas.getHeight()/3;
+
         //draw guide box
-        canvas.drawRect(x0-dx, y0-dy, x0+dx, y0+dy, paint);
+        // canvas.drawRect(x0-dx, y0-dy, x0+dx, y0+dy, paint);
+        // canvas.drawRect(-20, 280, 1100, 1400, paint);
+        canvas.drawRect(50, 200, 1030, 800, paint);
     }
 }
